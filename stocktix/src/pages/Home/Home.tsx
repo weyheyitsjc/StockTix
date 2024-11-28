@@ -1,7 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 
-const Home = (props: { loggedIn: boolean; email: string; setLoggedIn: boolean;}) => {
+const Home = (props: { loggedIn: boolean; email: string; setLoggedIn:  React.Dispatch<React.SetStateAction<boolean>>;}) => {
   const { loggedIn, email } = props;
   const navigate = useNavigate();
 
