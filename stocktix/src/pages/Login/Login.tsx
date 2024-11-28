@@ -10,30 +10,7 @@ const Login = (props: {setLoggedIn: React.Dispatch<React.SetStateAction<boolean>
   const navigate = useNavigate();
 
   const onButtonClick = () => {
-    // Set initial error values to empty
-    setEmailError('');
-    setPasswordError('');
-  
-    // Check if the user has entered both fields correctly
-    if ('' === email) {
-      setEmailError('Please enter your email');
-      return;
-    };
-  
-    if (!/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/.test(email)) {
-      setEmailError('Please enter a valid email');
-      return;
-    };
-  
-    if ('' === password) {
-      setPasswordError('Please enter a password');
-      return;
-    };
-  
-    if (password.length < 7) {
-      setPasswordError('The password must be 8 characters or longer')
-      return;
-    };
+    navigate('/home', {state: {loggedIn: true}})
   
     // Authentication calls will be made here...
   };
@@ -47,25 +24,25 @@ const Login = (props: {setLoggedIn: React.Dispatch<React.SetStateAction<boolean>
       <div className={'inputContainer'}>
         <input
           value={email}
-          placeholder="Enter your email here"
+          placeholder='Email'
           onChange={(ev) => setEmail(ev.target.value)}
           className={'inputBox'}
         />
-        <label className="errorLabel">{emailError}</label>
+        <label className='errorLabel'>{emailError}</label>
       </div>
       <br />
       <div className={'inputContainer'}>
         <input
           value={password}
-          placeholder="Enter your password here"
+          placeholder='Enter your password here'
           onChange={(ev) => setPassword(ev.target.value)}
           className={'inputBox'}
         />
-        <label className="errorLabel">{passwordError}</label>
+        <label className='errorLabel'>{passwordError}</label>
       </div>
       <br />
       <div className={'inputContainer'}>
-        <input className={'inputButton'} type="button" onClick={onButtonClick} value={'Log in'} />
+        <input className={'inputButton'} type='button' onClick={onButtonClick} value={'Log in'} />
       </div>
     </div>
   );
