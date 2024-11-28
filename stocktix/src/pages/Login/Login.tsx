@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
+import React, { SetStateAction, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-const Login = (props: any) => {
+const Login = (props: {setLoggedIn: React.Dispatch<React.SetStateAction<boolean>>; setEmail: React.Dispatch<SetStateAction<string>>;}) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [emailError, setEmailError] = useState('');
