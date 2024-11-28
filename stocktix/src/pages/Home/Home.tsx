@@ -1,5 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
+import NavBar from '../../components/NavBar/NavBar';
 
 const Home = (props: { loggedIn: boolean; email: string; setLoggedIn:  React.Dispatch<React.SetStateAction<boolean>>;}) => {
   const { loggedIn, email } = props;
@@ -11,6 +12,7 @@ const Home = (props: { loggedIn: boolean; email: string; setLoggedIn:  React.Dis
 
   return (
     <div className="mainContainer">
+      <NavBar />
       <div className={'titleContainer'}>
         <div>Welcome!</div>
       </div>
