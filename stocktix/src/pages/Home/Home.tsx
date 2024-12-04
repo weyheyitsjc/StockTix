@@ -1,10 +1,10 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
+import '../../assets/styles/global.css';
 
 type props = {
   loggedIn: boolean;
-  email: string;
-  setLoggedIn:  React.Dispatch<React.SetStateAction<boolean>>
+  setLoggedIn: React.Dispatch<React.SetStateAction<boolean>>
 }
 
 const Home: React.FC<props> = (props) => {
@@ -17,9 +17,9 @@ const Home: React.FC<props> = (props) => {
   return (
     <div className='mainContainer'>
       <div className={'titleContainer'}>
-        <div>Welcome!</div>
+        <div>StockTix Logo</div>
       </div>
-      <div>This is the home page.</div>
+      <div>Sign in to StockTix</div>
       <div className={'buttonContainer'}>
         <input
           className={'inputButton'}
