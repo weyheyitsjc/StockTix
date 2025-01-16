@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_1" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 691.18 118.63">
+  <!-- Generator: Adobe Illustrator 29.1.0, SVG Export Plug-In . SVG Version: 2.1.0 Build 142)  -->
+  <defs>
+    <style>
+      .st0 {
+        fill: none;
+        stroke: #231f20;
+        stroke-dasharray: 10 5;
+        stroke-miterlimit: 10;
+        stroke-width: 2px;
+      }
+
+      .st1 {
+        fill: #231f20;
+        font-family: SegoeUI-Semibold, 'Segoe UI';
+        font-size: 93.4px;
+        font-weight: 600;
+        letter-spacing: .4em;
+      }
+
+      .st2 {
+        fill: #fff;
+        font-family: Montserrat-BoldItalic, Montserrat;
+        font-size: 136.6px;
+        font-style: italic;
+        font-weight: 700;
+      }
+
+      .st3 {
+        fill: #dd4398;
+      }
+    </style>
+  </defs>
+  <text class="st2" transform="translate(10.87 109.74) scale(.98 1)"><tspan x="0" y="0">Stock</tspan></text>
+  <text/>
+  <text/>
+  <path class="st3" d="M665.29,110.78h-211.96c0-11.05-8.95-20-20-20V26.91c11.05,0,20-8.95,20-20h211.96c0,11.05,8.95,20,20,20v63.87c-11.05,0-20,8.95-20,20Z"/>
+  <path class="st0" d="M655.98,102.45h-195.29c0-11.05-8.95-20-20-20v-46.76c11.05,0,20-8.95,20-20h195.29c0,11.05,8.95,20,20,20v46.76c-11.05,0-20,8.95-20,20Z"/>
+  <text class="st1" transform="translate(463 92.49) scale(.9 1)"><tspan x="0" y="0">TIX</tspan></text>
+</svg>

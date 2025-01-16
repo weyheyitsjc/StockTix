@@ -1,28 +1,32 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
+import '../../assets/styles/global.css';
 
-const Home = (props: { loggedIn: boolean; email: string; setLoggedIn:  React.Dispatch<React.SetStateAction<boolean>>;}) => {
-  const { loggedIn, email } = props;
+type props = {
+  loggedIn: boolean;
+  setLoggedIn: React.Dispatch<React.SetStateAction<boolean>>
+}
+
+const Home: React.FC<props> = (props) => {
   const navigate = useNavigate();
 
   const onButtonClick = () => {
-    // You'll update this function later
+    navigate('/login');
   };
 
   return (
-    <div className="mainContainer">
+    <div className='mainContainer'>
       <div className={'titleContainer'}>
-        <div>Welcome!</div>
+        <div>StockTix Logo</div>
       </div>
-      <div>This is the home page.</div>
+      <div>Sign in to StockTix</div>
       <div className={'buttonContainer'}>
         <input
           className={'inputButton'}
-          type="button"
+          type='button'
           onClick={onButtonClick}
-          value={loggedIn ? 'Log out' : 'Log in'}
+          value={props.loggedIn ? 'Log out' : 'Log in'}
         />
-        {loggedIn ? <div>Your email address is {email}</div> : <div />}
       </div>
     </div>
   );

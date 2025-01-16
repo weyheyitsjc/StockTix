@@ -7,7 +7,6 @@ import { useEffect, useState } from 'react';
 
 function App() {
   const [loggedIn, setLoggedIn] = useState(false);
-  const [email, setEmail] = useState('');
 
   return (
     <div className="App">
