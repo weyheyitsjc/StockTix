@@ -1,0 +1,64 @@
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-sizing: border-box;
+    padding: 1.2rem 2rem;
+    background-color: #1E1E1E;
+    height: 3.75rem;
+}
+
+
+.items ol {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+
+.items ol li {
+    margin: 0 1rem;
+}
+
+.login a {
+    display: inline-flex;
+    align-items: center;
+    text-decoration: none;
+    color: #F622B2;
+    font-weight: bold;
+}
+
+/*
+.login a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #F622B2;
+    font-weight: bold;
+} 
+*/
+
+.logo a {
+    text-decoration: none;
+    color: #F622B2; 
+}
+
+.items ol li a {
+    text-decoration: none;
+    color: #F622B2; 
+    font-weight: 650;
+}
+
+.logo, .items, .login {
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
+
+.arrow {
+    font-size: 1rem;
+    margin-left: 0.5rem;
+    vertical-align: middle;
+}   
