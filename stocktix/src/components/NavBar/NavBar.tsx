@@ -1,4 +1,5 @@
 import React from 'react';
+import './NavBar.css'
 
 interface NavBarProps {
     brandName: string;
@@ -22,7 +23,9 @@ const NavBar = () => {
                 </ol> 
             </div>
             <div className='login'>
-                <a href='#'>Log In</a>
+                <a href='#'>Log In 
+                    <span className="arrow">&rarr;</span>
+                </a>
             </div>
         </nav>
     );
