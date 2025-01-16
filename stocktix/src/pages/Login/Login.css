@@ -53,7 +53,9 @@ body {
 }
 
 .input-field::placeholder {
-    color: #999999;
+    color: #FFFFFF;
+    font-weight: 500;
+    font-family: "Josefin Sans", sans-serif;
 }
 
 .errorLabel {
