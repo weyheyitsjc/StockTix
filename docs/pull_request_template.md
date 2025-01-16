@@ -3,8 +3,6 @@
 ## Title
 [Provide a succinct and descriptive title for the pull request, e.g., "Improve caching mechanism for API calls"]
 
-## Issue ticket number and link
-
 ## Type of Change
 - [ ] New feature
 - [ ] Bug fix
