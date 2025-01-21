@@ -9,16 +9,50 @@ type props = {
 }
 
 const SignUp: React.FC<props> = (props) =>  {
+  const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [confirmPassword, setConfirmPassword] = useState('');
+  const [nameError, setNameError] = useState('');
   const [emailError, setEmailError] = useState('');
+  const [passwordError, setPasswordError] = useState<string[]>([]);
+  const [confirmPasswordError, setConfirmPasswordError] = useState('');
   const navigate = useNavigate();
 
   const onButtonClick = () => {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    let valid = true;
+    setNameError('');
+    setEmailError('');
+    setPasswordError([]);
+    setConfirmPasswordError('');
+
+    if (name == '') {
+      setNameError('Please enter a name.');
+    }
+
     if (!emailRegex.test(email)) {
       setEmailError('Please enter a valid email address.');
-    } else {
+      valid = false;
+    }
+
+    const passwordErrors: string[] = [];
+    if (password.length < 8) {
+      passwordErrors.push('Password must be at least 8 characters long.');
+      valid = false;
+    }
+
+    if (!/\d/.test(password)) {
+      passwordErrors.push('Password must contain at least one number.');
+      valid = false;
+    }
+    
+    if (password != confirmPassword) {
+      setConfirmPasswordError('Passwords do not match.');
+      valid = false;
+    } 
+    
+    if (valid) {
       props.setLoggedIn(true);
       navigate('/');
     };
@@ -31,9 +65,16 @@ const SignUp: React.FC<props> = (props) =>  {
         <h2>Sign up for StockTix</h2>
         <form>
           <input
+            type='text'
+            placeholder='Name'
+            onChange={(ev) => setName(ev.target.value)}
+            className={'input-field'}
+          />
+          <label className='errorLabel'>{nameError}</label>
+          <input
             type='email'
             value={email}
-            placeholder='Emailk'
+            placeholder='Email'
             onChange={(ev) => setEmail(ev.target.value)}
             className={'input-field'}
           />
@@ -45,6 +86,21 @@ const SignUp: React.FC<props> = (props) =>  {
             onChange={(ev) => setPassword(ev.target.value)}
             className={'input-field'}
           />
+          {passwordError.length > 0 && (
+            <ul className='errorLabel'>
+              {passwordError.map((error, index) => (
+                <li key={index}>{error}</li>
+              ))}
+            </ul>
+          )}
+          <input
+            type='password'
+            value={confirmPassword}
+            placeholder='Comfirm Password'
+            onChange={(ev) => setConfirmPassword(ev.target.value)}
+            className={'input-field'}
+          />
+          <label className='errorLabel'>{confirmPasswordError}</label>
           <button
             type='submit'
             className='signup-button'

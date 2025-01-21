@@ -62,6 +62,15 @@ body {
     color: #F622B2;
 }
 
+.errorLabel ul {
+padding-left: 20px;
+list-style-type: disc; /* Add bullet points */
+}
+
+.errorLabel li {
+margin-bottom: 5px; /* Add spacing between list items */
+}
+
 .signup-button {
     width: 100%;
     padding: 10px;
