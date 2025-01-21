@@ -17,6 +17,8 @@ const Home: React.FC<props> = (props) => {
   //   navigate('/login');
   // };
   const [searchQuery, setSearchQuery] = useState<string>('');
+  const [filteredEvents, setFilteredEvents] = useState<any[]>([]);
+
 
   const events = [ // Populate with backend data
     {
@@ -28,17 +30,27 @@ const Home: React.FC<props> = (props) => {
     },
   ];
 
-  const filteredEvents = events.filter((event) =>
-    event.title.toLowerCase().includes(searchQuery.toLowerCase())
-  );
+  const handleSearch = (query: string) => {
+    const results = events.filter((event) =>
+      event.title.toLowerCase().includes(query.toLowerCase())
+    );
+    setFilteredEvents(results); // Update the filtered events
+    setSearchQuery(query); // Update the search query (for display purposes)
+  };
 
   return (
     <div className="home">
-      <SearchBar onSearch={setSearchQuery} />
+      <SearchBar onSearch={handleSearch} />
       <div className="events-container">
-        {filteredEvents.map((event, index) => (
-          <EventCard key={index} {...event} />
-        ))}
+        {filteredEvents.length > 0 ? (
+          filteredEvents.map((event, index) => (
+            <EventCard key={index} {...event} />
+          ))
+        ) : searchQuery ? (
+          <p>No events found for "{searchQuery}".</p>
+        ) : (
+          <p>Start searching for events!</p>
+        )}
       </div>
     </div>
   );

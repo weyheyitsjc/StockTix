@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './SearchBar.css';
 
 interface SearchBarProps {
@@ -6,8 +6,14 @@ interface SearchBarProps {
 }
 
 const SearchBar: React.FC<SearchBarProps> = ({ onSearch }) => {
+  const [query, setQuery] = useState<string>('');
+
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    onSearch(e.target.value);
+    setQuery(e.target.value); 
+  };
+
+  const handleSearchClick = () => {
+    onSearch(query); 
   };
 
   return (
@@ -15,8 +21,12 @@ const SearchBar: React.FC<SearchBarProps> = ({ onSearch }) => {
       <input
         type="text"
         placeholder="Search events, cities"
+        value={query}
         onChange={handleInputChange}
       />
+      <button className="search-icon" onClick={handleSearchClick}>
+        <i className="fas fa-search"></i>
+      </button>
     </div>
   );
 };

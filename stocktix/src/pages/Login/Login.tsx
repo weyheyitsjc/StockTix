@@ -9,9 +9,9 @@ type props = {
 }
 
 const Login: React.FC<props> = (props) =>  {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const [emailError, setEmailError] = useState('');
+  const [email, setEmail] = useState<string>('');
+  const [password, setPassword] = useState<string>('');
+  const [emailError, setEmailError] = useState<string>('');
   const navigate = useNavigate();
 
   const onButtonClick = () => {
