@@ -1,6 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import '../../assets/styles/global.css';
+import './Home.css';
+import SearchBar from '../../components/SearchBar/SearchBar';
+import EventCard from '../../components/EventCard/EventCard';
 
 type props = {
   loggedIn: boolean;
@@ -8,25 +11,34 @@ type props = {
 }
 
 const Home: React.FC<props> = (props) => {
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
 
-  const onButtonClick = () => {
-    navigate('/login');
-  };
+  // const onButtonClick = () => {
+  //   navigate('/login');
+  // };
+  const [searchQuery, setSearchQuery] = useState<string>('');
+
+  const events = [ // Populate with backend data
+    {
+      title: 'Project Glow',
+      date: 'May 31 & June 1, 2025',
+      venue: 'RFK Festival Grounds',
+      location: 'Washington D.C.',
+      image: 'https://edmmaniac.com/wp-content/uploads/2024/07/ProjectGLOWDates2025.png',
+    },
+  ];
+
+  const filteredEvents = events.filter((event) =>
+    event.title.toLowerCase().includes(searchQuery.toLowerCase())
+  );
 
   return (
-    <div className='mainContainer'>
-      <div className={'titleContainer'}>
-        <div>StockTix Logo</div>
-      </div>
-      <div>Sign in to StockTix</div>
-      <div className={'buttonContainer'}>
-        <input
-          className={'inputButton'}
-          type='button'
-          onClick={onButtonClick}
-          value={props.loggedIn ? 'Log out' : 'Log in'}
-        />
+    <div className="home">
+      <SearchBar onSearch={setSearchQuery} />
+      <div className="events-container">
+        {filteredEvents.map((event, index) => (
+          <EventCard key={index} {...event} />
+        ))}
       </div>
     </div>
   );

@@ -1,0 +1,14 @@
+/* General Styling */
+.home {
+    font-family: "Josefin Sans", sans-serif;
+    padding: 20px;
+    background: linear-gradient(135deg, #000000, #222222);
+    color: white;
+  }
+  
+  .events-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
