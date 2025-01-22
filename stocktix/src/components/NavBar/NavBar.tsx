@@ -1,5 +1,5 @@
 import React from 'react';
-import './NavBar.css'
+import styles from './NavBar.module.css';
 
 interface NavBarProps {
     brandName: string;
@@ -12,19 +12,19 @@ interface NavBarProps {
 const NavBar = () => {
     return (
         // fill in links and images
-        <nav className='navbar'>
-            <div className='logo'>
+        <nav className={styles.navbar}>
+            <div className={styles.logo}>
                 <a href='#'><img alt="LOGO" /></a>
             </div>
-            <div className='items'>
+            <div className={styles.items}>
                 <ol>
                     <li><a href='#'>Cities</a></li>
                     <li><a href='#'>Events</a></li>
                 </ol> 
             </div>
-            <div className='login'>
-                <a href='#'>Log In 
-                    <span className="arrow">&rarr;</span>
+            <div className={styles.login}>
+                <a href='/login'>Log In 
+                    <span className={styles.arrow}>&rarr;</span>
                 </a>
             </div>
         </nav>

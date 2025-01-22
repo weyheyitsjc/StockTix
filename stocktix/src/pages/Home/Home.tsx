@@ -16,7 +16,7 @@ const Home: React.FC<props> = (props) => {
 
   return (
     <div className='mainContainer'>
-      <div className={'titleContainer'}>
+      {/* <div className={'titleContainer'}>
         <div>StockTix Logo</div>
       </div>
       <div>Sign in to StockTix</div>
@@ -27,7 +27,7 @@ const Home: React.FC<props> = (props) => {
           onClick={onButtonClick}
           value={props.loggedIn ? 'Log out' : 'Log in'}
         />
-      </div>
+      </div> */}
     </div>
   );
 };
